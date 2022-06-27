@@ -60,7 +60,7 @@ app.get('/:short',async (req,res)=>{
   if(data == null){
     res.render('error',{check:'#'});
   }else{
-    res.redirect(data.fullUrl)
+    res.redirect(data.full)
   }
 }
 
