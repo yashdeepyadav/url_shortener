@@ -1,0 +1,12 @@
+<%- include('header') %>
+<%- include('navbar') %>
+<body>
+  <div class="jumbotron" id="jmbtrn" style="margin-bottom: 0px; display: flex; justify-content: center; align-items: center; flex-direction: column;" style="margin-bottom:0px">
+  <h1 class="display-4">Your goToUrl code is <%= data.short %>.</p>
+  <br>
+  <p class="display-4">Your url is : </p>
+  <p class="display-4">https://gotourl.com/<%= data.short %></p>
+  </div>
+</body>
+
+<%- include('footer') %>

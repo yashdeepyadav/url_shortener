@@ -1,0 +1,43 @@
+<%- include('header') %>
+<%- include('navbar') %>
+<body>
+
+<div class="jumbotron" id="jmbtrn" >
+  <div class="container" id="cntnr">
+    <h1 class="display-4">All the urls in the databse.</h1>
+    <table class="table" >
+    <thead>
+      <tr>
+        <th scope="col">Counter Value</th>
+        <th scope="col">Full URL</th>
+        <th scope="col">GoToURL  Code</th>
+        <th scope="col">Visitors</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% data.forEach(data=>{ %>
+      <tr>
+        <td><%= data.counter %></td>
+        <td class="ellipsis"><%= data.full %></td>
+        <td><%= data.short %></td>
+        <td><%= data.clicks %></td>
+      </tr>
+      <% }) %>
+    </tbody>
+  </table>
+  <nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+      <li class="page-item <%= prev==null ? 'nouse' : '' %>"><a class="page-link " href="/allurls?page=<%= prev %>">Previous</a></li>
+      <li class="page-item <%= prev==null ? 'nouse' : '' %>"><a class="page-link " href="/allurls?page=<%= prev %>"><%= prev %></a></li>
+      <li class="page-item"><a class="page-link " href="/allurls?page=<%= curr %>"><%= curr %></a></li>
+      <li class="page-item <%= next==null ? 'nouse' : '' %>"><a class="page-link " href="/allurls?page=<%= next %>"><%= next %></a></li>
+      <li class="page-item <%= next==null ? 'nouse' : '' %>"><a class="page-link " href="/allurls?page=<%= next %>">Next</a></li>
+    </ul>
+  </nav>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+</body>
+
+<%- include('footer') %>
